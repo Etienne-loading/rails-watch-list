@@ -1,0 +1,7 @@
+<div class="container">
+  <h1 class="my-4">Nouvelle liste</h1>
+  <%= simple_form_for @list do |f| %>
+  <%= f.input :name, placeholder: 'Top 10, Mes films préférés, ...', label: 'Titre de la liste', error: 'Le titre est un champ obligatoire' %>
+  <%= f.button :submit, class: 'btn btn-warning' %>
+<% end %>
+</div>

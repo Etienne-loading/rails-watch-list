@@ -1,0 +1,27 @@
+<div class='container'>
+  <h1 class="my-3"><%= @list.name%> </h1>
+
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card border-secondary m-3" style="max-width: 18rem;">
+        <div class="card-header"><%= bookmark.movie.title %></div>
+        <div class="card-body text-secondary">
+          <%= image_tag bookmark.movie.poster_url, class: 'w-100' %>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Ajouter un film", new_list_bookmark_path(@list) %> |
+  <%= link_to "Back to menu", lists_path %>
+</div>
+
+
+<%# <% @list.bookmarks.each do |bookmark| %> %>
+    <%# <%= bookmark.movie.title %> %>
+    <%# <%= bookmark.comment %> %>
+      <%# <%= link_to 'Delete', %>
+        <%# bookmark_path(bookmark), %>
+          <%# data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> %>
+  <%# <% end %> %>

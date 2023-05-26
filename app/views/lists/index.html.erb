@@ -1,0 +1,16 @@
+<div class="container">
+<h1 class="my-3 ">Librairie de mes WatchList disponibles</h1>
+  <div class="row">
+  <% @lists.each do |list| %>
+  <div class="col-sm-6">
+    <div class="card my-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <%= link_to "Afficher", list_path(list.id) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to "Créer une nouvelle liste", new_list_path %>
+  </div>
+</div>
